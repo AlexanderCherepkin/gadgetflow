@@ -62,7 +62,7 @@ export function Header() {
             <Link
               href="/wishlist"
               className="relative hidden sm:flex p-2 rounded-full hover:bg-surface"
-              aria-label="Избранное"
+              aria-label={`Избранное${items.length > 0 ? `, ${items.length} товар` : ""}`}
             >
               <Heart className="h-5 w-5" />
               {items.length > 0 && (

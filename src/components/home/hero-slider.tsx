@@ -156,13 +156,20 @@ export function HeroSlider() {
                 key={idx}
                 onClick={() => goTo(idx)}
                 className={cn(
-                  "h-2 rounded-full transition-all duration-300",
-                  idx === current
-                    ? "w-8 bg-accent"
-                    : "w-2 bg-border hover:bg-[var(--text-muted)]"
+                  "relative h-6 w-6 flex items-center justify-center rounded-full transition-all duration-300",
+                  idx === current ? "w-10" : ""
                 )}
                 aria-label={`Перейти к слайду ${idx + 1}`}
-              />
+              >
+                <span
+                  className={cn(
+                    "block rounded-full transition-all duration-300",
+                    idx === current
+                      ? "h-2 w-8 bg-accent"
+                      : "h-2 w-2 bg-border hover:bg-[var(--text-muted)]"
+                  )}
+                />
+              </button>
             ))}
           </div>
         </div>

@@ -63,10 +63,10 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-text-muted">
+          <p className="text-xs text-text-secondary">
             © 2026 GadgetFlow. Все права защищены.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 text-xs text-text-muted">
+          <div className="flex flex-wrap justify-center gap-4 text-xs text-text-secondary">
             <Link href="/privacy" className="hover:text-accent">Политика конфиденциальности</Link>
             <Link href="/terms" className="hover:text-accent">Пользовательское соглашение</Link>
             <Link href="/about" className="hover:text-accent">О компании</Link>
