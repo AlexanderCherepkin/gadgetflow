@@ -25,7 +25,9 @@ export function Header() {
             <div className="relative w-full">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-text-muted" />
               <input
-                type="text"
+                type="search"
+                id="search"
+                name="q"
                 placeholder="Поиск по товарам..."
                 className="w-full h-11 pl-11 pr-4 rounded-full border border-border bg-surface text-sm focus:outline-none focus:ring-2 focus:ring-accent"
               />
@@ -96,7 +98,9 @@ export function Header() {
             <div className="relative w-full">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-text-muted" />
               <input
-                type="text"
+                type="search"
+                id="search-mobile"
+                name="q"
                 placeholder="Поиск по товарам..."
                 autoFocus
                 className="w-full h-11 pl-11 pr-4 rounded-full border border-border bg-surface text-sm focus:outline-none focus:ring-2 focus:ring-accent"

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { Product } from "@/lib/data";
 
 interface WishlistContextType {
@@ -26,13 +26,19 @@ function loadWishlist(): Product[] {
 }
 
 export function WishlistProvider({ children }: { children: React.ReactNode }) {
-  const [items, setItems] = useState<Product[]>(loadWishlist);
+  const [items, setItems] = useState<Product[]>([]);
+  const [loaded, setLoaded] = useState(false);
 
-  React.useEffect(() => {
-    if (typeof window !== "undefined") {
+  useEffect(() => {
+    setItems(loadWishlist());
+    setLoaded(true);
+  }, []);
+
+  useEffect(() => {
+    if (loaded && typeof window !== "undefined") {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
     }
-  }, [items]);
+  }, [items, loaded]);
 
   const addItem = (product: Product) => {
     setItems((prev) => {

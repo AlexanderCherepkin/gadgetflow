@@ -3,6 +3,7 @@
 import React, {
   createContext,
   useContext,
+  useEffect,
   useMemo,
   useState,
 } from "react";
@@ -39,13 +40,19 @@ function loadCart(): CartItem[] {
 }
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
-  const [items, setItems] = useState<CartItem[]>(loadCart);
+  const [items, setItems] = useState<CartItem[]>([]);
+  const [loaded, setLoaded] = useState(false);
 
-  React.useEffect(() => {
-    if (typeof window !== "undefined") {
+  useEffect(() => {
+    setItems(loadCart());
+    setLoaded(true);
+  }, []);
+
+  useEffect(() => {
+    if (loaded && typeof window !== "undefined") {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
     }
-  }, [items]);
+  }, [items, loaded]);
 
   const addItem = (product: Product, quantity = 1, variant?: string) => {
     setItems((prev) => {

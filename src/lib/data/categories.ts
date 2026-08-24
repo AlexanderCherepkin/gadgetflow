@@ -5,21 +5,21 @@ export const categories: Category[] = [
     id: "smartfony",
     name: "Смартфоны",
     slug: "smartfony",
-    image: "/images/collections/smartphones.svg",
+    image: "/images/collections/smartphones.jpg",
     description: "Флагманы и надёжные модели на каждый день",
   },
   {
     id: "smart-chasy",
     name: "Смарт-часы",
     slug: "smart-chasy",
-    image: "/images/collections/watches.svg",
+    image: "/images/collections/watches.jpg",
     description: "Трекеры активности и умные часы",
   },
   {
     id: "audio",
     name: "Аудио",
     slug: "audio",
-    image: "/images/collections/headphones.svg",
+    image: "/images/collections/headphones.jpg",
     description: "Наушники и портативная акустика",
   },
   {
@@ -40,7 +40,7 @@ export const categories: Category[] = [
     id: "aksessuary",
     name: "Аксессуары",
     slug: "aksessuary",
-    image: "/images/collections/accessories.svg",
+    image: "/images/collections/accessories.jpg",
     description: "Чехлы, зарядные устройства, кабели",
   },
   {

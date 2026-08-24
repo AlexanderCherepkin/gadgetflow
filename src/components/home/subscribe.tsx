@@ -35,6 +35,8 @@ export function Subscribe() {
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
               <Input
                 type="email"
+                id="email"
+                name="email"
                 placeholder="Ваш email"
                 required
                 value={email}
