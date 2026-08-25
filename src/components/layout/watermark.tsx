@@ -6,7 +6,7 @@ export function Watermark() {
   return (
     <div
       aria-hidden="true"
-      className="fixed inset-0 -z-10 pointer-events-none select-none flex items-center justify-center overflow-hidden"
+      className="fixed inset-0 z-0 pointer-events-none select-none flex items-center justify-center overflow-hidden"
     >
       <Image
         src="/logo-gadgetflow.png"
