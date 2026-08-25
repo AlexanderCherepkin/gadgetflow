@@ -112,7 +112,7 @@ export function Header() {
 
       <nav className="hidden lg:block border-t border-border">
         <div className="container-tight">
-          <ul className="flex items-center gap-8 h-12 text-sm font-medium">
+          <ul className="flex items-center justify-around h-14 text-lg font-medium tracking-wide">
             {navCategories.map((cat) => (
               <li key={cat.slug}>
                 <Link
