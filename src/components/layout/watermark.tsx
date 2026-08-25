@@ -13,7 +13,7 @@ export function Watermark() {
         alt=""
         width={1920}
         height={960}
-        className="w-[90vw] h-auto max-h-screen object-contain opacity-[0.15]"
+        className="w-[90vw] h-auto max-h-screen object-contain opacity-[0.10]"
         priority={false}
       />
     </div>
