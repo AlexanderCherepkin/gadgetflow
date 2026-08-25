@@ -5,14 +5,14 @@ export function Logo({ className }: { className?: string }) {
   return (
     <Link
       href="/"
-      className={`flex items-center gap-3 min-h-11 min-w-11 ${className || ""}`}
+      className={`flex items-center gap-3 min-h-16 min-w-32 ${className || ""}`}
     >
       <Image
         src="/logo-gadgetflow.png"
         alt="GadgetFlow logo"
-        width={64}
+        width={128}
         height={64}
-        className="shrink-0 rounded-xl w-16 h-16"
+        className="shrink-0 rounded-xl w-32 h-16 object-contain"
         priority
       />
       <span className="text-xl font-semibold tracking-tight text-foreground">
