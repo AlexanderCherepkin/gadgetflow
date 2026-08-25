@@ -24,7 +24,7 @@ export default function FaqPage() {
             <Accordion type="single" collapsible className="w-full">
               {faqItems.map((item, idx) => (
                 <AccordionItem key={idx} value={`item-${idx}`}>
-                  <AccordionTrigger className="text-base md:text-lg">
+                  <AccordionTrigger className="text-base md:text-lg" headingLevel={2}>
                     {item.question}
                   </AccordionTrigger>
                   <AccordionContent>{item.answer}</AccordionContent>

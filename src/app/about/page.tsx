@@ -15,7 +15,7 @@ export default function AboutPage() {
 
           <div className="prose prose-lg max-w-none">
             <p className="text-text-secondary">
-              GadgetFlow — современный интернет-магазин электроники и гаджетов, работающий на рынках России, СНГ, Южного Кавказа и Балкан. Мы отбираем технику проверенных брендов и доставляем заказы через надёжных логистических партнёров.
+              GadgetFlow — современный интернет-магазин электроники и гаджетов, работающий на рынке Беларуси. Мы отбираем технику проверенных брендов и доставляем заказы через надёжных логистических партнёров по всей стране.
             </p>
 
             <h2 className="text-xl font-semibold mt-8 mb-4">Реквизиты</h2>
@@ -25,24 +25,20 @@ export default function AboutPage() {
                 <dd className="font-medium text-foreground">ИП Иванов Иван Иванович</dd>
               </div>
               <div className="flex justify-between border-b border-border pb-2">
-                <dt className="text-text-muted">ИНН</dt>
-                <dd className="font-medium text-foreground">123456789012</dd>
-              </div>
-              <div className="flex justify-between border-b border-border pb-2">
-                <dt className="text-text-muted">ОГРНИП</dt>
-                <dd className="font-medium text-foreground">312345678901234</dd>
+                <dt className="text-text-muted">УНП</dt>
+                <dd className="font-medium text-foreground">123456789</dd>
               </div>
               <div className="flex justify-between border-b border-border pb-2">
                 <dt className="text-text-muted">Юридический адрес</dt>
-                <dd className="font-medium text-foreground">г. Москва, ул. Технологическая, 12, офис 405</dd>
+                <dd className="font-medium text-foreground">г. Минск, пр. Победителей, 7, офис 405</dd>
               </div>
               <div className="flex justify-between border-b border-border pb-2">
                 <dt className="text-text-muted">Телефон</dt>
-                <dd className="font-medium text-foreground">+7 999 000-00-00</dd>
+                <dd className="font-medium text-foreground">+375 29 123-45-67</dd>
               </div>
               <div className="flex justify-between border-b border-border pb-2">
                 <dt className="text-text-muted">Email</dt>
-                <dd className="font-medium text-foreground">hello@gadgetflow.ru</dd>
+                <dd className="font-medium text-foreground">hello@gadgetflow.by</dd>
               </div>
               <div className="flex justify-between border-b border-border pb-2">
                 <dt className="text-text-muted">Режим работы</dt>

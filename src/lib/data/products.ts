@@ -1,4 +1,5 @@
 import { Product } from "./index";
+export type { Product };
 
 export const products: Product[] = [
   {
@@ -263,6 +264,210 @@ export const products: Product[] = [
       "Цоколь": "E27",
     },
   },
+  {
+    id: "p12",
+    name: "Xiaomi Smart Home Hub 2",
+    slug: "xiaomi-smart-home-hub-2",
+    category: "umnyy-dom",
+    brand: "Xiaomi",
+    price: 4990,
+    rating: 4.7,
+    reviews: 63,
+    image: "/images/products/xiaomi-hub.svg",
+    inStock: true,
+    shortDescription: "Центр управления умным домом Zigbee и Bluetooth.",
+    description:
+      "Xiaomi Smart Home Hub 2 объединяет устройства умного дома в одной экосистеме. Поддерживает Zigbee 3.0 и Bluetooth Mesh, работает с голосовыми помощниками и сценариями автоматизации.",
+    specs: {
+      "Протоколы": "Zigbee 3.0, Bluetooth Mesh",
+      "Питание": "USB-C 5 В",
+      "Совместимость": "Mi Home, Apple HomeKit",
+      "Диапазон": "до 30 м",
+      "Размеры": "60×60×25 мм",
+    },
+  },
+  {
+    id: "p13",
+    name: "Aqara Door & Window Sensor",
+    slug: "aqara-door-window-sensor",
+    category: "umnyy-dom",
+    brand: "Aqara",
+    price: 1490,
+    rating: 4.6,
+    reviews: 41,
+    image: "/images/products/aqara-sensor.svg",
+    inStock: true,
+    badge: "Хит",
+    shortDescription: "Датчик открытия двери и окна для умного дома.",
+    description:
+      "Компактный датчик Aqara мгновенно уведомляет об открытии или закрытии двери/окна. Работает от батарейки до 2 лет, интегрируется в сценарии безопасности и автоматизации.",
+    specs: {
+      "Протокол": "Zigbee",
+      "Питание": "CR1632, до 2 лет",
+      "Температура": "−10 … +50 °C",
+      "Размеры": "41×22×11 мм",
+      "Совместимость": "Aqara Home, HomeKit, Mi Home",
+    },
+  },
+  {
+    id: "p14",
+    name: "Belkin MagSafe 3-in-1 Wireless Charger",
+    slug: "belkin-magsafe-3in1-charger",
+    category: "aksessuary",
+    brand: "Belkin",
+    price: 8990,
+    rating: 4.8,
+    reviews: 52,
+    image: "/images/products/belkin-magsafe.svg",
+    inStock: true,
+    shortDescription: "Зарядная станция для iPhone, Apple Watch и AirPods.",
+    description:
+      "Belkin MagSafe 3-in-1 одновременно заряжает iPhone, Apple Watch и AirPods. Магнитное выравнивание обеспечивает быструю и удобную беспроводную зарядку до 15 Вт.",
+    specs: {
+      "Мощность": "до 15 Вт (iPhone)",
+      "Стандарт": "Qi + MagSafe",
+      "Питание": "блок питания 40 Вт в комплекте",
+      "Материал": "пластик, силиконовая подставка",
+      "Совместимость": "iPhone 12+, Apple Watch, AirPods",
+    },
+  },
+  {
+    id: "p15",
+    name: "UGREEN USB-C to Lightning Cable 1 m",
+    slug: "ugreen-usb-c-lightning-1m",
+    category: "aksessuary",
+    brand: "UGREEN",
+    price: 590,
+    rating: 4.4,
+    reviews: 128,
+    image: "/images/products/ugreen-cable.svg",
+    inStock: true,
+    badge: "Выгода",
+    shortDescription: "Сертифицированный кабель для быстрой зарядки Apple.",
+    description:
+      "UGREEN USB-C to Lightning поддерживает быструю зарядку iPhone до 20 Вт и передачу данных. Прочная оплётка и надёжные коннекторы продлевают срок службы.",
+    specs: {
+      "Длина": "1 м",
+      "Ток": "до 3 А",
+      "Мощность": "до 20 Вт",
+      "Сертификация": "MFi",
+      "Материал": "нейлоновая оплётка",
+    },
+  },
+  {
+    id: "p16",
+    name: "Samsung Galaxy Buds 3 Pro",
+    slug: "samsung-galaxy-buds-3-pro",
+    category: "audio",
+    brand: "Samsung",
+    price: 24990,
+    oldPrice: 28990,
+    rating: 4.7,
+    reviews: 76,
+    image: "/images/products/galaxy-buds-3-pro.svg",
+    inStock: true,
+    badge: "Топ",
+    shortDescription: "Премиум TWS с адаптивным шумоподавлением и AI.",
+    description:
+      "Galaxy Buds 3 Pro предлагают стильный дизайн «стебель», адаптивное шумоподавление и улучшенное качество звука с поддержкой Samsung Seamless Codec. Удобное управление жестами и долгая автономность.",
+    specs: {
+      "Тип": "Внутриканальные TWS",
+      "Шумоподавление": "Адаптивное ANC",
+      "Автономность": "до 6 часов (до 26 с кейсом)",
+      "Защита": "IP57",
+      "Кодек": "Samsung Seamless Codec",
+    },
+  },
+  {
+    id: "p17",
+    name: "Google Pixel Watch 2",
+    slug: "google-pixel-watch-2",
+    category: "smart-chasy",
+    brand: "Google",
+    price: 31990,
+    rating: 4.5,
+    reviews: 58,
+    image: "/images/products/pixel-watch-2.svg",
+    inStock: true,
+    shortDescription: "Умные часы с Fitbit и Google в одном устройстве.",
+    description:
+      "Pixel Watch 2 объединяют экосистему Google и опыт Fitbit: точный трекинг активности, ЭКГ, оценку уровня стресса и уведомления. Элегантный круглый дисплей и день автономности.",
+    specs: {
+      "Экран": '1,2" AMOLED',
+      "Сенсоры": "пульс, SpO2, ЭКГ, температура кожи",
+      "ОС": "Wear OS",
+      "Автономность": "до 24 часов",
+      "Защита": "5ATM",
+    },
+  },
+  {
+    id: "p18",
+    name: "Lenovo IdeaPad Slim 5 16\"",
+    slug: "lenovo-ideapad-slim-5-16",
+    category: "noutbuki",
+    brand: "Lenovo",
+    price: 64990,
+    rating: 4.6,
+    reviews: 34,
+    image: "/images/products/lenovo-ideapad.svg",
+    inStock: true,
+    badge: "Хит",
+    shortDescription: "Универсальный ноутбук для работы и развлечений.",
+    description:
+      "Lenovo IdeaPad Slim 5 с 16-дюймовым экраном и процессором AMD Ryzen 7000 — отличный выбор для учёбы, офиса и дома. Лёгкий металлический корпус, быстрый SSD и современные порты.",
+    specs: {
+      "Экран": '16" WUXGA IPS',
+      "Процессор": "AMD Ryzen 5 7430U",
+      "Память": "16 ГБ / 512 ГБ SSD",
+      "Вес": "1,89 кг",
+      "Автономность": "до 10 часов",
+    },
+  },
+  {
+    id: "p19",
+    name: "Nothing Phone (2a)",
+    slug: "nothing-phone-2a",
+    category: "smartfony",
+    brand: "Nothing",
+    price: 27990,
+    rating: 4.5,
+    reviews: 91,
+    image: "/images/products/nothing-phone-2a.svg",
+    inStock: true,
+    badge: "Новинка",
+    shortDescription: "Смартфон с уникальным дизайном Glyph Interface.",
+    description:
+      "Nothing Phone (2a) предлагает фирменный дизайн с Glyph Interface, чистый Android и сбалансированную камеру. Доступная цена без компромиссов в производительности.",
+    specs: {
+      "Экран": '6,7" AMOLED 120 Гц',
+      "Процессор": "Dimensity 7200 Pro",
+      "Память": "8 ГБ / 128 ГБ",
+      "Камера": "50 Мп + 50 Мп",
+      "Аккумулятор": "5000 мА·ч",
+    },
+  },
+  {
+    id: "p20",
+    name: "Amazon Kindle Paperwhite 6\"",
+    slug: "amazon-kindle-paperwhite-6",
+    category: "aksessuary",
+    brand: "Amazon",
+    price: 15990,
+    rating: 4.9,
+    reviews: 44,
+    image: "/images/products/kindle-paperwhite.svg",
+    inStock: true,
+    shortDescription: "Электронная книга с подсветкой и водозащитой.",
+    description:
+      "Kindle Paperwhite 6\" - идеальный ридер для любителей читать: высокое разрешение E Ink, регулируемая тёплая подсветка, водозащита IPX8 и неделя автономности.",
+    specs: {
+      "Экран": '6" E Ink Carta 1200, 300 ppi',
+      "Подсветка": "17 LEDs, тёплая/холодная",
+      "Память": "16 ГБ",
+      "Защита": "IPX8",
+      "Автономность": "до 6 недель",
+    },
+  },
 ];
 
 export function getProductBySlug(slug: string): Product | undefined {
@@ -275,4 +480,16 @@ export function getProductsByCategory(slug: string): Product[] {
 
 export function getFeaturedProducts(): Product[] {
   return products.slice(0, 6);
+}
+
+export function searchProducts(query: string): Product[] {
+  const q = query.trim().toLowerCase();
+  if (!q) return [];
+  return products.filter(
+    (p) =>
+      p.name.toLowerCase().includes(q) ||
+      p.brand.toLowerCase().includes(q) ||
+      p.shortDescription.toLowerCase().includes(q) ||
+      p.category.toLowerCase().includes(q)
+  );
 }

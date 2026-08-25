@@ -29,9 +29,12 @@ export function WishlistProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<Product[]>([]);
   const [loaded, setLoaded] = useState(false);
 
+  // Load wishlist after hydration to avoid mismatch between server (empty) and client.
   useEffect(() => {
-    setItems(loadWishlist());
-    setLoaded(true);
+    queueMicrotask(() => {
+      setItems(loadWishlist());
+      setLoaded(true);
+    });
   }, []);
 
   useEffect(() => {

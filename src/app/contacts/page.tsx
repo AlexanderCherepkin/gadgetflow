@@ -21,7 +21,7 @@ export default function ContactsPage() {
               </div>
               <div>
                 <p className="text-sm text-text-muted">Телефон</p>
-                <a href="tel:+79990000000" className="font-medium hover:text-accent">+7 999 000-00-00</a>
+                <a href="tel:+375291234567" className="font-medium hover:text-accent">+375 29 123-45-67</a>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -30,7 +30,7 @@ export default function ContactsPage() {
               </div>
               <div>
                 <p className="text-sm text-text-muted">Email</p>
-                <a href="mailto:hello@gadgetflow.ru" className="font-medium hover:text-accent">hello@gadgetflow.ru</a>
+                <a href="mailto:hello@gadgetflow.by" className="font-medium hover:text-accent">hello@gadgetflow.by</a>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -39,7 +39,7 @@ export default function ContactsPage() {
               </div>
               <div>
                 <p className="text-sm text-text-muted">Адрес</p>
-                <p className="font-medium">г. Москва, ул. Технологическая, 12, офис 405</p>
+                <p className="font-medium">г. Минск, пр. Победителей, 7, офис 405</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -65,7 +65,7 @@ export default function ContactsPage() {
                 <MessageCircle className="h-4 w-4" /> Telegram
               </a>
               <a
-                href="https://wa.me/79990000000"
+                href="https://wa.me/375291234567"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-border hover:border-accent transition-colors"

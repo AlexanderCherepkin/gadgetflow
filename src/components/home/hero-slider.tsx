@@ -97,7 +97,7 @@ export function HeroSlider() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden" data-testid="hero-slider">
       <div className="container-tight">
         <div
           className="relative rounded-none md:rounded-3xl overflow-hidden min-h-[480px] md:min-h-[560px] lg:min-h-[640px] flex items-center"
@@ -110,6 +110,7 @@ export function HeroSlider() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
+              data-testid="hero-slide"
               className="grid md:grid-cols-2 gap-8 items-center w-full px-6 md:px-12 lg:px-16 py-12 md:py-0"
             >
               <div className="order-2 md:order-1 z-10">
@@ -156,8 +157,8 @@ export function HeroSlider() {
                 key={idx}
                 onClick={() => goTo(idx)}
                 className={cn(
-                  "relative h-6 w-6 flex items-center justify-center rounded-full transition-all duration-300",
-                  idx === current ? "w-10" : ""
+                  "relative h-11 w-11 flex items-center justify-center rounded-full transition-all duration-300",
+                  idx === current ? "w-14" : ""
                 )}
                 aria-label={`Перейти к слайду ${idx + 1}`}
               >
@@ -165,8 +166,8 @@ export function HeroSlider() {
                   className={cn(
                     "block rounded-full transition-all duration-300",
                     idx === current
-                      ? "h-2 w-8 bg-accent"
-                      : "h-2 w-2 bg-border hover:bg-[var(--text-muted)]"
+                      ? "h-2.5 w-10 bg-accent"
+                      : "h-2.5 w-2.5 bg-border hover:bg-[var(--text-muted)]"
                   )}
                 />
               </button>

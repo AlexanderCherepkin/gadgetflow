@@ -74,6 +74,7 @@ export interface Country {
   code: string;
   name: string;
   phonePrefix: string;
+  currency?: "BYN" | "RUB" | "KZT" | "AMD" | "KGS";
 }
 
 export interface FaqItem {

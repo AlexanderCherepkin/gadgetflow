@@ -50,12 +50,12 @@ export function ProductCard({
             e.preventDefault();
             toggle(product);
           }}
-          className="absolute top-3 right-3 p-2 rounded-full bg-white shadow-card opacity-0 group-hover:opacity-100 transition-opacity"
+          className="absolute top-3 right-3 flex items-center justify-center h-11 w-11 rounded-full bg-white shadow-card opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
           aria-label={isInWishlist(product.id) ? "Удалить из избранного" : "В избранное"}
         >
           <Heart
             className={cn(
-              "h-4 w-4",
+              "h-5 w-5",
               isInWishlist(product.id)
                 ? "fill-error text-error"
                 : "text-text-secondary"
@@ -68,7 +68,7 @@ export function ProductCard({
         <Rating value={product.rating} count={product.reviews} />
         <Link
           href={`/catalog/${product.category}/${product.slug}`}
-          className="mt-2 text-sm md:text-base font-medium leading-snug hover:text-accent transition-colors"
+          className="mt-2 inline-block min-h-[44px] text-sm md:text-base font-medium leading-snug hover:text-accent transition-colors"
         >
           {product.name}
         </Link>
@@ -85,9 +85,9 @@ export function ProductCard({
             size="icon"
             onClick={() => addItem(product)}
             aria-label="Добавить в корзину"
-            className="opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
+            className="h-11 w-11 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
           >
-            <ShoppingBag className="h-4 w-4" />
+            <ShoppingBag className="h-5 w-5" />
           </Button>
         </div>
       </div>

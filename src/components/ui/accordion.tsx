@@ -19,24 +19,34 @@ const AccordionItem = React.forwardRef<
 ));
 AccordionItem.displayName = "AccordionItem";
 
+interface AccordionTriggerProps
+  extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger> {
+  headingLevel?: 2 | 3 | 4 | 5 | 6;
+}
+
 const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
->(({ className, children, ...props }, ref) => (
-  <AccordionPrimitive.Header className="flex">
-    <AccordionPrimitive.Trigger
-      ref={ref}
-      className={cn(
-        "flex flex-1 items-center justify-between py-5 text-left text-base font-medium transition-all hover:text-accent &[data-state=open]>svg:rotate-180",
-        className
-      )}
-      {...props}
-    >
-      {children}
-      <ChevronDown className="h-5 w-5 shrink-0 text-text-muted transition-transform duration-300" />
-    </AccordionPrimitive.Trigger>
-  </AccordionPrimitive.Header>
-));
+  AccordionTriggerProps
+>(({ className, children, headingLevel = 3, ...props }, ref) => {
+  const HeaderTag = `h${headingLevel}` as "h2" | "h3" | "h4" | "h5" | "h6";
+  return (
+    <AccordionPrimitive.Header className="flex" asChild>
+      <HeaderTag>
+        <AccordionPrimitive.Trigger
+          ref={ref}
+          className={cn(
+            "flex flex-1 items-center justify-between py-5 text-left text-base font-medium transition-all hover:text-accent &[data-state=open]>svg:rotate-180",
+            className
+          )}
+          {...props}
+        >
+          {children}
+          <ChevronDown className="h-5 w-5 shrink-0 text-text-muted transition-transform duration-300" />
+        </AccordionPrimitive.Trigger>
+      </HeaderTag>
+    </AccordionPrimitive.Header>
+  );
+});
 AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
 
 const AccordionContent = React.forwardRef<

@@ -8,6 +8,7 @@ import React, {
   useState,
 } from "react";
 import { Product } from "@/lib/data";
+import { CurrencyCode } from "@/lib/utils";
 
 export interface CartItem {
   product: Product;
@@ -23,11 +24,15 @@ interface CartContextType {
   clearCart: () => void;
   totalCount: number;
   totalPrice: number;
+  deliveryCountry: string;
+  setDeliveryCountry: (code: string) => void;
+  deliveryCurrency: CurrencyCode;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 const STORAGE_KEY = "gadgetflow_cart";
+const COUNTRY_KEY = "gadgetflow_delivery_country";
 
 function loadCart(): CartItem[] {
   if (typeof window === "undefined") return [];
@@ -39,13 +44,27 @@ function loadCart(): CartItem[] {
   }
 }
 
+function loadCountry(): string {
+  if (typeof window === "undefined") return "BY";
+  try {
+    return localStorage.getItem(COUNTRY_KEY) || "BY";
+  } catch {
+    return "BY";
+  }
+}
+
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [loaded, setLoaded] = useState(false);
+  const [deliveryCountry, setDeliveryCountryState] = useState("BY");
 
+  // Load cart after hydration to avoid mismatch between server (empty cart) and client.
   useEffect(() => {
-    setItems(loadCart());
-    setLoaded(true);
+    queueMicrotask(() => {
+      setItems(loadCart());
+      setDeliveryCountryState(loadCountry());
+      setLoaded(true);
+    });
   }, []);
 
   useEffect(() => {
@@ -53,6 +72,16 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
     }
   }, [items, loaded]);
+
+  useEffect(() => {
+    if (loaded && typeof window !== "undefined") {
+      localStorage.setItem(COUNTRY_KEY, deliveryCountry);
+    }
+  }, [deliveryCountry, loaded]);
+
+  const setDeliveryCountry = (code: string) => {
+    setDeliveryCountryState(code);
+  };
 
   const addItem = (product: Product, quantity = 1, variant?: string) => {
     setItems((prev) => {
@@ -103,6 +132,15 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     [items]
   );
 
+  // Delivery currency derived from selected country. Defaults to BYN.
+  const deliveryCurrency: CurrencyCode = useMemo(() => {
+    if (deliveryCountry === "RU") return "RUB";
+    if (deliveryCountry === "KZ") return "KZT";
+    if (deliveryCountry === "AM") return "AMD";
+    if (deliveryCountry === "KG") return "KGS";
+    return "BYN";
+  }, [deliveryCountry]);
+
   return (
     <CartContext.Provider
       value={{
@@ -113,6 +151,9 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         clearCart,
         totalCount,
         totalPrice,
+        deliveryCountry,
+        setDeliveryCountry,
+        deliveryCurrency,
       }}
     >
       {children}

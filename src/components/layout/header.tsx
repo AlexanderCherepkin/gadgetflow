@@ -21,7 +21,7 @@ export function Header() {
         <div className="flex items-center justify-between h-[72px] md:h-[80px]">
           <Logo />
 
-          <div className="hidden lg:flex flex-1 max-w-xl mx-8">
+          <form action="/search" method="GET" className="hidden lg:flex flex-1 max-w-xl mx-8">
             <div className="relative w-full">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-text-muted" />
               <input
@@ -32,19 +32,19 @@ export function Header() {
                 className="w-full h-11 pl-11 pr-4 rounded-full border border-border bg-surface text-sm focus:outline-none focus:ring-2 focus:ring-accent"
               />
             </div>
-          </div>
+          </form>
 
           <div className="flex items-center gap-2 md:gap-4">
             <a
-              href="tel:+79990000000"
+              href="tel:+375291234567"
               className="hidden md:flex items-center gap-2 text-sm font-medium text-foreground hover:text-accent transition-colors"
             >
               <Phone className="h-4 w-4" />
-              <span>+7 999 000-00-00</span>
+              <span>+375 29 123-45-67</span>
             </a>
 
             <button
-              className="lg:hidden p-2 rounded-full hover:bg-surface"
+              className="lg:hidden flex items-center justify-center p-2.5 rounded-full hover:bg-surface min-h-11 min-w-11"
               onClick={() => setSearchOpen(!searchOpen)}
               aria-label="Поиск"
             >
@@ -53,7 +53,7 @@ export function Header() {
 
             <Link
               href="/account"
-              className="hidden sm:flex p-2 rounded-full hover:bg-surface"
+              className="hidden sm:flex items-center justify-center p-2.5 rounded-full hover:bg-surface min-h-11 min-w-11"
               aria-label="Личный кабинет"
             >
               <User className="h-5 w-5" />
@@ -61,12 +61,12 @@ export function Header() {
 
             <Link
               href="/wishlist"
-              className="relative hidden sm:flex p-2 rounded-full hover:bg-surface"
+              className="relative hidden sm:flex items-center justify-center p-2.5 rounded-full hover:bg-surface min-h-11 min-w-11"
               aria-label={`Избранное${items.length > 0 ? `, ${items.length} товар` : ""}`}
             >
               <Heart className="h-5 w-5" />
               {items.length > 0 && (
-                <span className="absolute -top-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-accent text-[10px] font-medium text-white">
+                <span className="absolute right-1 top-1 flex h-4 w-4 items-center justify-center rounded-full bg-accent text-[10px] font-medium text-white">
                   {items.length}
                 </span>
               )}
@@ -74,17 +74,17 @@ export function Header() {
 
             <Link
               href="/cart"
-              className="flex items-center gap-2 p-2 sm:pl-3 sm:pr-4 rounded-full border border-border hover:border-foreground transition-colors"
+              className="flex items-center justify-center gap-2 p-2.5 sm:pl-3 sm:pr-4 rounded-full border border-border hover:border-foreground transition-colors min-h-11 min-w-11"
             >
               <ShoppingBag className="h-5 w-5" />
-              <div className="hidden sm:flex flex-col items-start leading-none">
+              <div className="flex flex-col items-start leading-none">
                 <span className="text-[10px] text-text-muted">{totalCount} товаров</span>
-                <span className="text-sm font-semibold">{formatPrice(totalPrice)}</span>
+                <span className="hidden sm:block text-sm font-semibold">{formatPrice(totalPrice)}</span>
               </div>
             </Link>
 
             <button
-              className="lg:hidden p-2 rounded-full hover:bg-surface"
+              className="lg:hidden flex items-center justify-center p-2.5 rounded-full hover:bg-surface min-h-11 min-w-11"
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Меню"
             >
@@ -94,7 +94,7 @@ export function Header() {
         </div>
 
         {searchOpen && (
-          <div className="lg:hidden pb-4">
+          <form action="/search" method="GET" className="lg:hidden pb-4">
             <div className="relative w-full">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-text-muted" />
               <input
@@ -106,7 +106,7 @@ export function Header() {
                 className="w-full h-11 pl-11 pr-4 rounded-full border border-border bg-surface text-sm focus:outline-none focus:ring-2 focus:ring-accent"
               />
             </div>
-          </div>
+          </form>
         )}
       </div>
 
@@ -167,8 +167,8 @@ export function Header() {
                 <Link href="/cart" className="flex items-center gap-3 py-2">
                   <ShoppingBag className="h-5 w-5" /> Корзина ({totalCount})
                 </Link>
-                <a href="tel:+79990000000" className="flex items-center gap-3 py-2">
-                  <Phone className="h-5 w-5" /> +7 999 000-00-00
+                <a href="tel:+375291234567" className="flex items-center gap-3 py-2">
+                  <Phone className="h-5 w-5" /> +375 29 123-45-67
                 </a>
               </div>
             </div>

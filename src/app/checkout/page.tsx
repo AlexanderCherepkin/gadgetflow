@@ -1,6 +1,6 @@
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-import { CheckoutForm } from "@/components/cart/checkout-form";
+import { CheckoutForm } from "@/components/checkout/checkout-form";
 
 export const metadata = {
   title: "Оформление заказа",

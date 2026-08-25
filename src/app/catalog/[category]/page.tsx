@@ -38,7 +38,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           {categoryDef && (
             <p className="text-text-secondary mb-8 max-w-2xl">{categoryDef.description}</p>
           )}
-          <ProductGrid products={items} />
+          <ProductGrid products={items} enableFilters />
         </div>
       </main>
       <Footer />

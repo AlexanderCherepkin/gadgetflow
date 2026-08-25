@@ -12,8 +12,8 @@ const benefits = [
   },
   {
     icon: Truck,
-    title: "Доставка в 9 стран",
-    text: "СДЭК/Boxberry по России, СНГ и Балканам",
+    title: "Доставка по Беларуси",
+    text: "Курьер, ПВЗ и Белпочта в Минске и регионах",
   },
   {
     icon: ShieldCheck,

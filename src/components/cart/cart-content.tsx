@@ -34,6 +34,7 @@ export function CartContent() {
           {items.map((item) => (
             <div
               key={`${item.product.id}-${item.variant}`}
+              data-testid="cart-item"
               className="flex gap-4 p-4 rounded-2xl border border-border"
             >
               <Link
