@@ -4,7 +4,6 @@ import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 
 const SLIDE_INTERVAL = 8000;
 
@@ -104,20 +103,6 @@ export function HeroSlider() {
           className="relative rounded-none md:rounded-3xl overflow-hidden min-h-[480px] md:min-h-[560px] lg:min-h-[640px] flex items-center"
           style={{ background: slides[current].bg }}
         >
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 z-0 pointer-events-none select-none flex items-center justify-center"
-          >
-            <Image
-              src="/logo-gadgetflow.png"
-              alt=""
-              width={1200}
-              height={600}
-              className="w-[90%] max-w-4xl h-auto object-contain opacity-[0.15]"
-              priority={false}
-            />
-          </div>
-
           <AnimatePresence mode="wait">
             <motion.div
               key={current}
