@@ -36,11 +36,11 @@ export function Header() {
 
           <div className="flex items-center gap-2 md:gap-4">
             <a
-              href="tel:+375291234567"
+              href="tel:+375291314138"
               className="hidden md:flex items-center gap-2 text-sm font-medium text-foreground hover:text-accent transition-colors"
             >
               <Phone className="h-4 w-4" />
-              <span>+375 29 123-45-67</span>
+              <span>+375 (29) 131-41-38</span>
             </a>
 
             <button
@@ -167,8 +167,8 @@ export function Header() {
                 <Link href="/cart" className="flex items-center gap-3 py-2">
                   <ShoppingBag className="h-5 w-5" /> Корзина ({totalCount})
                 </Link>
-                <a href="tel:+375291234567" className="flex items-center gap-3 py-2">
-                  <Phone className="h-5 w-5" /> +375 29 123-45-67
+                <a href="tel:+375291314138" className="flex items-center gap-3 py-2">
+                  <Phone className="h-5 w-5" /> +375 (29) 131-41-38
                 </a>
               </div>
             </div>

@@ -103,11 +103,11 @@ export default function ReturnsPage() {
               </div>
               <div className="flex items-center gap-3 text-text-secondary">
                 <Mail className="h-5 w-5 text-accent" />
-                <a href="mailto:shopify.shyrikby@gmail.com" className="hover:text-accent">shopify.shyrikby@gmail.com</a>
+                <a href="mailto:hello@gadgetflow-shop.store" className="hover:text-accent">hello@gadgetflow-shop.store</a>
               </div>
             </div>
             <p className="text-sm text-text-secondary mt-4">
-              Адрес приёма возвратов: г. Гомель, Республика Беларусь. Точный адрес высылается
+              Адрес приёма возвратов: Гомельская обл., г. Гомель, ул. СВИРИДОВА, д. 55. Точный адрес пункта выдачи/склада высылается
               после согласования возврата.
             </p>
           </div>
@@ -115,9 +115,9 @@ export default function ReturnsPage() {
           <div className="text-xs text-text-muted">
             <p className="mb-2">Юридическая информация:</p>
             <p>
-              Продавец: ИП Черепкин Александр Александрович, Республика Беларусь, г. Гомель.
-              УНП [укажите УНП]. Интернет-магазин включён в Торговый реестр Республики Беларусь
-              [дата], № [номер].
+              Продавец: ИП Черепкин Александр Анатольевич, Гомельская обл., г. Гомель, ул. СВИРИДОВА, д. 55.
+              УНП EA5448379, ИМНС: 432 Инспекция МНС по Железнодорожному району г. Гомеля.
+              Свидетельство о государственной регистрации: на учёте с 26.08.2026, выдано Министерством по налогам и сборам Республики Беларусь.
             </p>
           </div>
         </div>

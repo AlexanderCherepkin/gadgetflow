@@ -1,5 +1,6 @@
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { PaymentLogos } from "@/components/payment-logos";
 import { Truck, CreditCard, RefreshCcw, MapPin, Package, Clock } from "lucide-react";
 
 export const metadata = {
@@ -116,6 +117,11 @@ export default function DeliveryPage() {
             })}
           </div>
 
+          <div className="bg-surface rounded-2xl p-6 mb-10">
+            <h3 className="font-semibold text-foreground mb-4">Платёжные системы</h3>
+            <PaymentLogos />
+          </div>
+
           <h2 className="text-xl font-semibold mt-8 mb-4">Стоимость и сроки</h2>
           <p className="text-text-secondary mb-4">
             Точная стоимость доставки рассчитывается автоматически на этапе оформления заказа
@@ -133,12 +139,12 @@ export default function DeliveryPage() {
               <span className="font-medium text-text-primary">Юридическая информация:</span>
             </p>
             <p>
-              Продавец: ИП Черепкин Александр Александрович, Республика Беларусь, г. Гомель.
-              УНП [укажите УНП]. Интернет-магазин включён в Торговый реестр Республики Беларусь
-              [дата], № [номер]. По вопросам доставки и оплаты звоните{" "}
+              Продавец: ИП Черепкин Александр Анатольевич, Гомельская обл., г. Гомель, ул. СВИРИДОВА, д. 55.
+              УНП EA5448379, ИМНС: 432 Инспекция МНС по Железнодорожному району г. Гомеля.
+              Свидетельство о государственной регистрации: на учёте с 26.08.2026, выдано Министерством по налогам и сборам Республики Беларусь. По вопросам доставки и оплаты звоните{" "}
               <a href="tel:+375291314138" className="text-accent hover:underline">+375 (29) 131-41-38</a>
               {" "}или пишите на{" "}
-              <a href="mailto:shopify.shyrikby@gmail.com" className="text-accent hover:underline">shopify.shyrikby@gmail.com</a>.
+              <a href="mailto:hello@gadgetflow-shop.store" className="text-accent hover:underline">hello@gadgetflow-shop.store</a>.
             </p>
           </div>
         </div>

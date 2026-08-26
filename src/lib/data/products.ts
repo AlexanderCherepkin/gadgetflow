@@ -468,6 +468,28 @@ export const products: Product[] = [
       "Автономность": "до 6 недель",
     },
   },
+  {
+    id: "p-test-1byn",
+    name: "Тестовые наушники",
+    slug: "testnye-naushniki-1-byn",
+    category: "audio",
+    brand: "GadgetFlow",
+    price: 1,
+    rating: 5,
+    reviews: 0,
+    image: "/images/products/test-headphones.svg",
+    inStock: true,
+    badge: "Тест",
+    shortDescription: "Тестовый товар для проверки оплаты. Не для продажи.",
+    description:
+      "Тестовая позиция для проверки платёжного шлюза bePaid. Добавлена только для технического тестирования оформления и оплаты заказа. В реальной продаже не участвует.",
+    specs: {
+      "Назначение": "Тестовый товар",
+      "Цена": "1 BYN",
+      "Статус": "Только для тестов",
+      "Доставка": "Не отправляется",
+    },
+  },
 ];
 
 export function getProductBySlug(slug: string): Product | undefined {

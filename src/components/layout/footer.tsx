@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Logo } from "./logo";
 import { navCategories } from "@/lib/data/categories";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { PaymentLogos } from "@/components/payment-logos";
 
 export function Footer() {
   return (
@@ -16,15 +17,15 @@ export function Footer() {
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2 text-text-secondary">
                 <MapPin className="h-4 w-4 shrink-0" />
-                <span>г. Минск, пр. Победителей, 7</span>
+                <span>Гомельская обл., г. Гомель, ул. СВИРИДОВА, д. 55</span>
               </div>
               <div className="flex items-center gap-2 text-text-secondary">
                 <Phone className="h-4 w-4 shrink-0" />
-                <a href="tel:+375291234567" className="hover:text-accent">+375 29 123-45-67</a>
+                <a href="tel:+375291314138" className="hover:text-accent">+375 (29) 131-41-38</a>
               </div>
               <div className="flex items-center gap-2 text-text-secondary">
                 <Mail className="h-4 w-4 shrink-0" />
-                <a href="mailto:hello@gadgetflow.by" className="hover:text-accent">hello@gadgetflow.by</a>
+                <a href="mailto:hello@gadgetflow-shop.store" className="hover:text-accent">hello@gadgetflow-shop.store</a>
               </div>
             </div>
           </div>
@@ -56,28 +57,34 @@ export function Footer() {
             <h2 className="font-semibold mb-4">Связь</h2>
             <ul className="space-y-2 text-sm text-text-secondary">
               <li><a href="https://t.me/gadgetflow" target="_blank" rel="noreferrer" className="hover:text-accent">Telegram</a></li>
-              <li><a href="https://wa.me/375291234567" target="_blank" rel="noreferrer" className="hover:text-accent">WhatsApp</a></li>
+              <li><a href="https://wa.me/375291314138" target="_blank" rel="noreferrer" className="hover:text-accent">WhatsApp</a></li>
               <li><a href="#" className="hover:text-accent">ВКонтакте</a></li>
             </ul>
           </div>
+        </div>
+
+        <div className="mt-10 bg-surface rounded-2xl p-5">
+          <p className="text-sm font-bold text-text-primary mb-3">Принимаем к оплате</p>
+          <PaymentLogos />
         </div>
 
         <div className="mt-12 pt-8 border-t border-border">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-xs text-text-secondary mb-8">
             <div className="space-y-1">
               <p className="font-medium text-text-primary">Продавец</p>
-              <p>ИП Черепкин Александр Александрович</p>
-              <p>Республика Беларусь, г. Гомель</p>
+              <p>ИП Черепкин Александр Анатольевич</p>
+              <p>Гомельская обл., г. Гомель, ул. СВИРИДОВА, д. 55</p>
             </div>
             <div className="space-y-1">
               <p className="font-medium text-text-primary">Реквизиты</p>
-              <p>УНП: [укажите УНП]</p>
-              <p>Торговый реестр РБ: [дата], № [номер]</p>
+              <p>УНП: EA5448379</p>
+              <p>ИМНС: 432 Инспекция МНС по Железнодорожному району г. Гомеля</p>
+              <p>Свидетельство: на учёте с 26.08.2026, выдано МНС РБ</p>
             </div>
             <div className="space-y-1">
               <p className="font-medium text-text-primary">Контакты</p>
               <p><a href="tel:+375291314138" className="hover:text-accent">+375 (29) 131-41-38</a></p>
-              <p><a href="mailto:shopify.shyrikby@gmail.com" className="hover:text-accent">shopify.shyrikby@gmail.com</a></p>
+              <p><a href="mailto:hello@gadgetflow-shop.store" className="hover:text-accent">hello@gadgetflow-shop.store</a></p>
             </div>
             <div className="space-y-1">
               <p className="font-medium text-text-primary">Правовая информация</p>

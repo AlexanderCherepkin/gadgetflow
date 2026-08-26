@@ -75,12 +75,12 @@ export default function WarrantyPage() {
             </div>
             <div className="flex items-center gap-3">
               <Mail className="h-5 w-5 text-accent" />
-              <a href="mailto:shopify.shyrikby@gmail.com" className="hover:text-accent">shopify.shyrikby@gmail.com</a>
+              <a href="mailto:hello@gadgetflow-shop.store" className="hover:text-accent">hello@gadgetflow-shop.store</a>
             </div>
             <p className="text-xs text-text-muted mt-2">
-              Продавец: ИП Черепкин Александр Александрович, Республика Беларусь, г. Гомель.
-              УНП [укажите УНП]. Интернет-магазин включён в Торговый реестр Республики Беларусь
-              [дата], № [номер].
+              Продавец: ИП Черепкин Александр Анатольевич, Гомельская обл., г. Гомель, ул. СВИРИДОВА, д. 55.
+              УНП EA5448379, ИМНС: 432 Инспекция МНС по Железнодорожному району г. Гомеля.
+              Свидетельство о государственной регистрации: на учёте с 26.08.2026, выдано Министерством по налогам и сборам Республики Беларусь.
             </p>
           </div>
         </div>
