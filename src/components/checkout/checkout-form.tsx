@@ -340,7 +340,7 @@ export function CheckoutForm() {
 
               <div className="pt-4 border-t border-border text-xs text-text-secondary space-y-2">
                 <p>
-                  <span className="font-medium text-text-primary">Продавец:</span> ИП Черепкин Александр Анатольевич. Юридический адрес: Гомельская обл., г. Гомель, ул. СВИРИДОВА, д. 55.
+                  <span className="font-medium text-text-primary">Продавец:</span> ИП Черепкин Александр Анатольевич. Юридический адрес: Гомельская обл., г. Гомель, ул. СВИРИДОВА, д. 11.
                 </p>
                 <p>
                   Нажимая кнопку «Перейти к оплате», вы соглашаетесь с{" "}

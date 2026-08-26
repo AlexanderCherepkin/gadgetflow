@@ -30,7 +30,7 @@ export default function AboutPage() {
               </div>
               <div className="flex justify-between border-b border-border pb-2">
                 <dt className="text-text-muted">Юридический адрес</dt>
-                <dd className="font-medium text-foreground">Гомельская обл., г. Гомель, ул. СВИРИДОВА, д. 55</dd>
+                <dd className="font-medium text-foreground">Гомельская обл., г. Гомель, ул. СВИРИДОВА, д. 11</dd>
               </div>
               <div className="flex justify-between border-b border-border pb-2">
                 <dt className="text-text-muted">Телефон</dt>

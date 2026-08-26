@@ -24,7 +24,7 @@ export default function ReceiptSamplePage() {
           <div className="bg-white border border-border rounded-2xl p-6 md:p-8 shadow-sm mb-8">
             <div className="text-center border-b border-dashed border-border pb-4 mb-4">
               <p className="font-bold text-lg">ИП Черепкин Александр Анатольевич</p>
-              <p className="text-sm text-text-secondary">Гомельская обл., г. Гомель, ул. СВИРИДОВА, д. 55</p>
+              <p className="text-sm text-text-secondary">Гомельская обл., г. Гомель, ул. СВИРИДОВА, д. 11</p>
               <p className="text-sm text-text-secondary">УНП EA5448379, ИМНС: 432 Инспекция МНС по Железнодорожному району г. Гомеля</p>
               <p className="text-xs text-text-muted mt-2">КАССОВЫЙ ЧЕК № 0000000001</p>
             </div>

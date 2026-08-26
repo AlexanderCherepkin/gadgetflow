@@ -39,7 +39,7 @@ export default function ContactsPage() {
               </div>
               <div>
                 <p className="text-sm text-text-muted">Адрес</p>
-                <p className="font-medium">Гомельская обл., г. Гомель, ул. СВИРИДОВА, д. 55</p>
+                <p className="font-medium">Гомельская обл., г. Гомель, ул. СВИРИДОВА, д. 11</p>
               </div>
             </div>
             <div className="flex items-start gap-4">

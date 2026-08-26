@@ -17,7 +17,7 @@ export function Footer() {
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2 text-text-secondary">
                 <MapPin className="h-4 w-4 shrink-0" />
-                <span>Гомельская обл., г. Гомель, ул. СВИРИДОВА, д. 55</span>
+                <span>Гомельская обл., г. Гомель, ул. СВИРИДОВА, д. 11</span>
               </div>
               <div className="flex items-center gap-2 text-text-secondary">
                 <Phone className="h-4 w-4 shrink-0" />
@@ -73,7 +73,7 @@ export function Footer() {
             <div className="space-y-1">
               <p className="font-medium text-text-primary">Продавец</p>
               <p>ИП Черепкин Александр Анатольевич</p>
-              <p>Гомельская обл., г. Гомель, ул. СВИРИДОВА, д. 55</p>
+              <p>Гомельская обл., г. Гомель, ул. СВИРИДОВА, д. 11</p>
             </div>
             <div className="space-y-1">
               <p className="font-medium text-text-primary">Реквизиты</p>
