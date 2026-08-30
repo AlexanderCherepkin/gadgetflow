@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Logo } from "./logo";
 import { navCategories } from "@/lib/data/categories";
 import { Phone, Mail, MapPin } from "lucide-react";
@@ -6,8 +7,21 @@ import { PaymentLogos } from "@/components/payment-logos";
 
 export function Footer() {
   return (
-    <footer className="bg-surface pt-16 pb-8">
-      <div className="container-tight">
+    <footer className="relative bg-surface pt-16 pb-8 overflow-hidden">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center opacity-[0.08]"
+      >
+        <Image
+          src="/logo-gadgetflow.png"
+          alt=""
+          width={320}
+          height={160}
+          className="h-auto max-w-[min(320px,50vw)] object-contain"
+        />
+      </div>
+
+      <div className="container-tight relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           <div className="space-y-4">
             <Logo />
