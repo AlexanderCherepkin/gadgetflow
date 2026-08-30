@@ -10,14 +10,14 @@ export function Footer() {
     <footer className="relative bg-surface pt-16 pb-8 overflow-hidden">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center opacity-[0.08]"
+        className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-[0.06]"
       >
         <Image
           src="/logo-gadgetflow.png"
           alt=""
-          width={320}
-          height={160}
-          className="h-auto max-w-[min(320px,50vw)] object-contain"
+          fill
+          className="object-contain p-8"
+          sizes="100vw"
         />
       </div>
 
