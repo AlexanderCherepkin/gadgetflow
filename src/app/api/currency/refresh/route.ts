@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { updateCurrencyRates } from "@/lib/currency/engine";
 
 export async function POST() {
+  const { updateCurrencyRates } = await import("@/lib/currency/engine");
   const result = await updateCurrencyRates();
 
   if (!result.bynRub || !result.rubByn) {
