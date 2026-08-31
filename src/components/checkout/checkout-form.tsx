@@ -15,7 +15,8 @@ import {
 } from "@/components/ui/select";
 import { useCart } from "@/context/cart-context";
 import { eaeuDeliveryZones, getDeliveryZones } from "@/lib/data/delivery";
-import { formatPhone, formatPrice, convertPrice } from "@/lib/utils";
+import { formatPhone, convertPrice } from "@/lib/utils";
+import { Price } from "@/components/ui/price";
 import { createOrder } from "@/lib/supabase/orders";
 
 const steps = [
@@ -223,7 +224,7 @@ export function CheckoutForm() {
                     <SelectContent>
                       {eaeuDeliveryZones.map((zone) => (
                         <SelectItem key={zone.countryCode} value={zone.countryCode}>
-                          {zone.countryName} ({zone.currency})
+                          {zone.countryName} {zone.currency === "BYN" ? "" : `(${zone.currency})`}
                         </SelectItem>
                       ))}
                     </SelectContent>
@@ -258,7 +259,7 @@ export function CheckoutForm() {
             <div className="space-y-4">
               <h2 className="text-xl font-semibold mb-4">Адрес доставки</h2>
               <p className="text-sm text-text-secondary">
-                Доставка осуществляется в {currentZone.countryName}. Стоимость указана в {currentZone.currency}.
+                Доставка осуществляется в {currentZone.countryName}. Стоимость указана в белорусских рублях.
               </p>
 
               <Select value={zoneName} onValueChange={setZoneName}>
@@ -271,7 +272,7 @@ export function CheckoutForm() {
                     return (
                       <SelectItem key={zone.name} value={zone.name}>
                         {zone.name} —{" "}
-                        {localCost === 0 ? "Бесплатно" : formatPrice(localCost, deliveryCurrency)} ({zone.days})
+                        {localCost === 0 ? "Бесплатно" : <Price value={localCost} currency={deliveryCurrency} />} ({zone.days})
                       </SelectItem>
                     );
                   })}
@@ -366,7 +367,11 @@ export function CheckoutForm() {
                   onClick={handleSubmit}
                   disabled={!paymentMethod || isSubmitting}
                 >
-                  {isSubmitting ? "Обработка..." : `Оплатить ${formatPrice(totalLocal, deliveryCurrency)}`}
+                  {isSubmitting ? "Обработка..." : (
+                    <span className="inline-flex items-center gap-1">
+                      Оплатить <Price value={totalLocal} currency={deliveryCurrency} />
+                    </span>
+                  )}
                 </Button>
               </div>
             </div>
@@ -393,7 +398,7 @@ export function CheckoutForm() {
                     <p className="text-xs text-text-secondary">{item.variant}</p>
                   )}
                   <p className="text-xs text-text-secondary">
-                    {item.quantity} × {formatPrice(convertPrice(item.product.price, deliveryCurrency), deliveryCurrency)}
+                    {item.quantity} × <Price value={convertPrice(item.product.price, deliveryCurrency)} currency={deliveryCurrency} />
                   </p>
                 </div>
               </div>
@@ -403,20 +408,20 @@ export function CheckoutForm() {
           <div className="space-y-3 text-sm">
             <div className="flex justify-between">
               <span className="text-text-secondary">Товары ({items.length})</span>
-              <span>{formatPrice(convertPrice(totalPrice, deliveryCurrency), deliveryCurrency)}</span>
+              <span><Price value={convertPrice(totalPrice, deliveryCurrency)} currency={deliveryCurrency} /></span>
             </div>
             <div className="flex justify-between">
               <span className="text-text-secondary">Доставка</span>
               <span>
                 {deliveryCostLocal === 0 && zoneName
                   ? "Бесплатно"
-                  : formatPrice(deliveryCostLocal, deliveryCurrency)}
+                  : <Price value={deliveryCostLocal} currency={deliveryCurrency} />}
               </span>
             </div>
           </div>
           <div className="flex justify-between items-center mt-6 pt-6 border-t border-border">
             <span className="text-lg font-semibold">К оплате</span>
-            <span className="text-2xl font-bold">{formatPrice(totalLocal, deliveryCurrency)}</span>
+            <span className="text-2xl font-bold"><Price value={totalLocal} currency={deliveryCurrency} /></span>
           </div>
         </div>
       </div>

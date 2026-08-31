@@ -2,7 +2,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { getOrders, updateOrderStatus } from "@/lib/supabase/orders";
 import { OrderWithItems, OrderStatus } from "@/lib/types/order";
-import { formatPrice } from "@/lib/utils";
+import { Price } from "@/components/ui/price";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { revalidatePath } from "next/cache";
@@ -79,7 +79,7 @@ export default async function AdminPage() {
                         </p>
                       </div>
                       <div className="text-right">
-                        <p className="text-xl font-bold">{formatPrice(order.total_byn)}</p>
+                        <p className="text-xl font-bold"><Price value={order.total_byn} /></p>
                         <p className="text-xs text-text-secondary">{order.delivery_method}</p>
                       </div>
                     </div>
@@ -90,7 +90,7 @@ export default async function AdminPage() {
                         {order.items?.map((item) => (
                           <li key={item.id}>
                             {item.quantity} × {item.product_name} —{" "}
-                            {formatPrice(item.total_byn)}
+                            <Price value={item.total_byn} />
                           </li>
                         ))}
                       </ul>

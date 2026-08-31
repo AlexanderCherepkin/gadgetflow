@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Trash2, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/cart-context";
-import { formatPrice } from "@/lib/utils";
+import { Price } from "@/components/ui/price";
 
 export function CartContent() {
   const { items, updateQuantity, removeItem, totalPrice, totalCount } = useCart();
@@ -73,7 +73,7 @@ export function CartContent() {
                   </div>
                   <div className="text-right">
                     <div className="font-semibold">
-                      {formatPrice(item.product.price * item.quantity)}
+                      <Price value={item.product.price * item.quantity} />
                     </div>
                   </div>
                 </div>
@@ -95,7 +95,7 @@ export function CartContent() {
           <div className="space-y-3 text-sm">
             <div className="flex justify-between">
               <span className="text-text-secondary">Товары ({totalCount})</span>
-              <span>{formatPrice(totalPrice)}</span>
+              <span><Price value={totalPrice} /></span>
             </div>
             <div className="flex justify-between">
               <span className="text-text-secondary">Доставка</span>
@@ -104,7 +104,7 @@ export function CartContent() {
           </div>
           <div className="flex justify-between items-center mt-6 pt-6 border-t border-border">
             <span className="text-lg font-semibold">К оплате</span>
-            <span className="text-2xl font-bold">{formatPrice(totalPrice)}</span>
+            <span className="text-2xl font-bold"><Price value={totalPrice} /></span>
           </div>
           <Button className="w-full mt-6" size="lg" asChild>
             <Link href="/checkout">Оформить заказ</Link>

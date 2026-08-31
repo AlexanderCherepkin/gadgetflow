@@ -8,7 +8,8 @@ import { Button } from "@/components/ui/button";
 import { Rating } from "@/components/ui/rating";
 import { useCart } from "@/context/cart-context";
 import { useWishlist } from "@/context/wishlist-context";
-import { cn, formatPrice } from "@/lib/utils";
+import { cn } from "@/lib/utils";
+import { Price } from "@/components/ui/price";
 
 const tabs = [
   { id: "description", label: "Описание" },
@@ -41,10 +42,10 @@ export function ProductDetail({ product }: { product: Product }) {
           <Rating value={product.rating} count={product.reviews} />
 
           <div className="mt-6 flex items-end gap-3">
-            <span className="text-3xl font-bold">{formatPrice(product.price)}</span>
+            <span className="text-3xl font-bold"><Price value={product.price} /></span>
             {product.oldPrice && (
               <span className="text-lg text-text-muted line-through">
-                {formatPrice(product.oldPrice)}
+                <Price value={product.oldPrice} />
               </span>
             )}
           </div>

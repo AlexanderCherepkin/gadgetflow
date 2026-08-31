@@ -175,7 +175,7 @@ export function ProductGrid({ products, title, enableFilters = false }: ProductG
                   )}
 
                   <fieldset>
-                    <legend className="mb-3 text-sm font-semibold">Цена, BYN</legend>
+                    <legend className="mb-3 text-sm font-semibold">Цена</legend>
                     <div className="flex items-center gap-2">
                       <Input
                         type="number"

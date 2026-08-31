@@ -7,7 +7,7 @@ import { Logo } from "./logo";
 import { navCategories } from "@/lib/data/categories";
 import { useCart } from "@/context/cart-context";
 import { useWishlist } from "@/context/wishlist-context";
-import { formatPrice } from "@/lib/utils";
+import { Price } from "@/components/ui/price";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -79,7 +79,7 @@ export function Header() {
               <ShoppingBag className="h-5 w-5" />
               <div className="flex flex-col items-start leading-none">
                 <span className="text-[10px] text-text-muted">{totalCount} товаров</span>
-                <span className="hidden sm:block text-sm font-semibold">{formatPrice(totalPrice)}</span>
+                <span className="hidden sm:block text-sm font-semibold"><Price value={totalPrice} /></span>
               </div>
             </Link>
 

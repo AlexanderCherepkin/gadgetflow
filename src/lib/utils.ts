@@ -23,7 +23,8 @@ export function convertPrice(bynPrice: number, targetCurrency: CurrencyCode): nu
 }
 
 export function formatPrice(value: number, currency: CurrencyCode = "BYN"): string {
-  // currencyDisplay: "code" для BYN избегает hydration mismatch между Node.js и браузером.
+  // Deprecated: prefer <Price /> component to render BYN as an image.
+  // Kept for non-UI helpers and server-side formatting.
   const display = currency === "BYN" ? "code" : "symbol";
   return new Intl.NumberFormat("ru-RU", {
     style: "currency",
@@ -31,9 +32,7 @@ export function formatPrice(value: number, currency: CurrencyCode = "BYN"): stri
     currencyDisplay: display,
     minimumFractionDigits: currency === "BYN" ? 2 : 0,
     maximumFractionDigits: currency === "BYN" ? 2 : 0,
-  })
-    .format(value)
-    .replace("BYN", "BYN");
+  }).format(value);
 }
 
 export function formatPhone(raw: string, prefix: string = "+375"): string {

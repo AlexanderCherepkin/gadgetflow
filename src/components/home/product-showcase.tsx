@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Rating } from "@/components/ui/rating";
 import { getProductBySlug } from "@/lib/data/products";
 import { useCart } from "@/context/cart-context";
-import { formatPrice } from "@/lib/utils";
+import { Price } from "@/components/ui/price";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 export function ProductShowcase() {
@@ -48,7 +48,7 @@ export function ProductShowcase() {
             </div>
             <div className="flex items-center gap-4 mb-8">
               <span className="text-2xl md:text-3xl font-bold text-white">
-                {formatPrice(product.price)}
+                <Price value={product.price} className="text-white" />
               </span>
             </div>
             <div className="flex flex-wrap gap-3">

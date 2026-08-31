@@ -1,5 +1,6 @@
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { Price } from "@/components/ui/price";
 
 export const metadata = {
   title: "Образец кассового чека",
@@ -65,18 +66,18 @@ export default function ReceiptSamplePage() {
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
                   <span>1. Умные часы ProWatch X</span>
-                  <span>549.00 BYN</span>
+                  <span><Price value={549} showDecimals /></span>
                 </div>
                 <div className="flex justify-between text-text-secondary text-xs">
-                  <span>1 × 549.00 BYN</span>
+                  <span>1 × <Price value={549} showDecimals /></span>
                   <span>НДС 20%</span>
                 </div>
                 <div className="flex justify-between">
                   <span>2. Беспроводные наушники AirBuds 3</span>
-                  <span>329.00 BYN</span>
+                  <span><Price value={329} showDecimals /></span>
                 </div>
                 <div className="flex justify-between text-text-secondary text-xs">
-                  <span>1 × 329.00 BYN</span>
+                  <span>1 × <Price value={329} showDecimals /></span>
                   <span>НДС 20%</span>
                 </div>
               </div>
@@ -85,15 +86,15 @@ export default function ReceiptSamplePage() {
             <div className="border-t border-dashed border-border py-4 space-y-2 text-sm">
               <div className="flex justify-between">
                 <span className="text-text-secondary">ИТОГО:</span>
-                <span className="font-semibold">878.00 BYN</span>
+                <span className="font-semibold"><Price value={878} showDecimals /></span>
               </div>
               <div className="flex justify-between">
                 <span className="text-text-secondary">Безналичная оплата:</span>
-                <span>878.00 BYN</span>
+                <span><Price value={878} showDecimals /></span>
               </div>
               <div className="flex justify-between">
                 <span className="text-text-secondary">Сдача:</span>
-                <span>0.00 BYN</span>
+                <span><Price value={0} showDecimals /></span>
               </div>
             </div>
 

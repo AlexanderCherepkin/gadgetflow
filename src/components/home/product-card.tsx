@@ -9,7 +9,8 @@ import { Button } from "@/components/ui/button";
 import { Rating } from "@/components/ui/rating";
 import { useCart } from "@/context/cart-context";
 import { useWishlist } from "@/context/wishlist-context";
-import { cn, formatPrice } from "@/lib/utils";
+import { cn } from "@/lib/utils";
+import { Price } from "@/components/ui/price";
 
 export function ProductCard({
   product,
@@ -76,10 +77,10 @@ export function ProductCard({
           <div className="flex flex-col">
             {product.oldPrice && (
               <span className="text-xs text-text-muted line-through">
-                {formatPrice(product.oldPrice)}
+                <Price value={product.oldPrice} />
               </span>
             )}
-            <span className="text-lg font-semibold">{formatPrice(product.price)}</span>
+            <span className="text-lg font-semibold"><Price value={product.price} /></span>
           </div>
           <Button
             size="icon"
