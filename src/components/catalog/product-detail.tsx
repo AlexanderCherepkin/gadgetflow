@@ -50,7 +50,7 @@ export function ProductDetail({ product }: { product: Product }) {
               <div className="mt-6 flex flex-wrap items-end gap-3">
                 <span className="text-3xl font-bold"><Price value={product.price} /></span>
                 {product.oldPrice && product.oldPrice > product.price && (
-                  <span className="text-lg text-text-muted line-through decoration-2">
+                  <span className="text-lg text-text-muted line-through decoration-2 decoration-error">
                     <Price value={product.oldPrice} />
                   </span>
                 )}
