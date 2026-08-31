@@ -41,14 +41,27 @@ export function ProductDetail({ product }: { product: Product }) {
           <h1 className="text-2xl md:text-4xl font-semibold mb-3">{product.name}</h1>
           <Rating value={product.rating} count={product.reviews} />
 
-          <div className="mt-6 flex items-end gap-3">
-            <span className="text-3xl font-bold"><Price value={product.price} /></span>
-            {product.oldPrice && (
-              <span className="text-lg text-text-muted line-through">
-                <Price value={product.oldPrice} />
-              </span>
-            )}
-          </div>
+          {(() => {
+            const discountPercent =
+              product.oldPrice && product.oldPrice > product.price
+                ? Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100)
+                : null;
+            return (
+              <div className="mt-6 flex flex-wrap items-end gap-3">
+                <span className="text-3xl font-bold"><Price value={product.price} /></span>
+                {product.oldPrice && product.oldPrice > product.price && (
+                  <span className="text-lg text-text-muted line-through">
+                    <Price value={product.oldPrice} />
+                  </span>
+                )}
+                {discountPercent && discountPercent > 0 && (
+                  <span className="inline-flex items-center rounded-full bg-error/10 px-2.5 py-0.5 text-sm font-medium text-error">
+                    -{discountPercent}%
+                  </span>
+                )}
+              </div>
+            );
+          })()}
 
           <div className="mt-4 flex items-center gap-2 text-sm">
             <Check className={cn("h-4 w-4", product.inStock ? "text-success" : "text-error")} />

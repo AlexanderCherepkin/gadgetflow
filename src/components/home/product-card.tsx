@@ -27,6 +27,13 @@ export function ProductCard({
       ? "sale"
       : "default";
 
+  const discountPercent =
+    product.oldPrice && product.oldPrice > product.price
+      ? Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100)
+      : null;
+
+  const showDiscountBadge = !product.badge && discountPercent && discountPercent > 0;
+
   return (
     <div
       className={cn(
@@ -41,9 +48,9 @@ export function ProductCard({
           fill
           className="object-contain p-2"
         />
-        {product.badge && (
+        {(product.badge || showDiscountBadge) && (
           <Badge variant={badgeVariant} className="absolute top-3 left-3">
-            {product.badge}
+            {product.badge || `-${discountPercent}%`}
           </Badge>
         )}
         <button
@@ -75,7 +82,7 @@ export function ProductCard({
         </Link>
         <div className="mt-auto pt-3 flex items-center justify-between">
           <div className="flex flex-col">
-            {product.oldPrice && (
+            {product.oldPrice && product.oldPrice > product.price && (
               <span className="text-xs text-text-muted line-through">
                 <Price value={product.oldPrice} />
               </span>
