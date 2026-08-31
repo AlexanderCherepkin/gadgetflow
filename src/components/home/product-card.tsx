@@ -83,7 +83,7 @@ export function ProductCard({
         <div className="mt-auto pt-3 flex items-center justify-between">
           <div className="flex flex-col">
             {product.oldPrice && product.oldPrice > product.price && (
-              <span className="text-xs text-text-muted line-through">
+              <span className="text-xs text-text-muted line-through decoration-2">
                 <Price value={product.oldPrice} />
               </span>
             )}
