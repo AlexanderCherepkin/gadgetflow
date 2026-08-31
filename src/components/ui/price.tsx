@@ -32,9 +32,9 @@ export function Price({
         <Image
           src="/images/hero/byn.png"
           alt="BYN"
-          width={16}
-          height={16}
-          className={cn("inline-block object-contain", iconClassName)}
+          width={12}
+          height={12}
+          className={cn("inline-block object-contain translate-y-[1px]", iconClassName)}
         />
       ) : (
         <span className="text-current">{currency}</span>
